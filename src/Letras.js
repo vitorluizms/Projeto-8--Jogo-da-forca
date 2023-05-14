@@ -1,8 +1,8 @@
-export default function Letras() {
-    const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+export default function Letras(props) {
+    
+    const {letraClicada, letters} = props;
+
     return (
-        <div className="containerLetters">
-            {alfabeto.map(letters => <button className="letter">{letters.toUpperCase()}</button>)}
-        </div>
+        <button onClick={() => letraClicada(letters)} className="letter">{letters.toUpperCase()}</button>
     )
 }
