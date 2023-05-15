@@ -50,16 +50,17 @@ export default function App() {
   const [vitoria, setVitoria] = useState(false);
   const [derrota, setDerrota] = useState(false);
   const [imageForca, setForca] = useState(forca[erros]);
-  const [status, setStatus] = useState(false)
-  console.log(palavra);
+  const [status, setStatus] = useState(false);
 
   function sortearPalavra() {
     setDerrota(false);
     setFim(false);
     setVitoria(false);
-    setStatus(true)
+    setStatus(true);
+    setLetras([]);
     erros = 0;
     acertos = 0;
+    setForca(forca[erros]);
     let palavraSorteada = palavras[Math.floor(Math.random() * palavras.length)];
     setPalavra(palavraSorteada);
     let underline = "";
@@ -73,6 +74,7 @@ export default function App() {
     const arrayUnderline = [...palavraUnderline];
     const clicada = [...arrayLetras, letra];
     setLetras(clicada);
+
     if (palavra.includes(letra)) {
       for (let i = 0; i < palavraUnderline.length; i++) {
         if (palavra[i].includes(letra)) {
@@ -97,7 +99,6 @@ export default function App() {
     }
   }
 
-
   return (
     <React.Fragment>
       <Jogo
@@ -105,6 +106,8 @@ export default function App() {
         underline={palavraUnderline}
         sortearPalavra={sortearPalavra}
         forca={imageForca}
+        vitoria={vitoria}
+        derrota={derrota}
       />
       <div className="containerLetters">
         {alfabeto.map((letters) => (

@@ -43,7 +43,7 @@ body {
     align-items: center;
     flex-wrap: wrap;    
 }
-.letter{
+.containerLetters button{
     width: 40px;
     height: 40px;
     margin-right: 12px;
@@ -57,7 +57,12 @@ body {
     line-height: 19px;
     text-align: center;
 
+    background-color: #E1ECF4;
     color: #39739D;
+}
+.containerLetters .desabilitado {
+    background-color: #9FAAB5;
+    color: #39739D
 }
 
 .palavraJogo {
@@ -69,4 +74,11 @@ body {
     line-height: 68px;
     text-align: center;
     letter-spacing: 10px;
+}
+
+.verde {
+    color: #27AE60;
+}
+.vermelha {
+    color: #FF0000;
 }
