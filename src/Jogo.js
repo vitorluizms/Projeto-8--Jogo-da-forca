@@ -6,13 +6,20 @@ export default function Jogo(props) {
 
   return (
     <div className="game">
-      <img src={forca} alt={forca}></img>
+      <img data-test="game-image" src={forca} alt={forca}></img>
       <div className="direita">
-        <button onClick={sortearPalavra} className="startGame">
+        <button
+          data-test="choose-word"
+          onClick={sortearPalavra}
+          className="startGame"
+        >
           Escolher Palavra
         </button>
         <div className="palavraJogo">
-          <p className={derrota ? "vermelha" : vitoria ? "verde" : ""}>
+          <p
+            data-test="word"
+            className={derrota ? "vermelha" : vitoria ? "verde" : ""}
+          >
             {derrota ? palavra : underline}
           </p>
         </div>
