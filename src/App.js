@@ -112,6 +112,7 @@ export default function App() {
       <div className="containerLetters">
         {alfabeto.map((letters) => (
           <Letras
+            key={letters}
             letters={letters}
             letraClicada={letraClicada}
             fim={fim}
